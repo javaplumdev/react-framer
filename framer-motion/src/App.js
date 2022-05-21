@@ -1,37 +1,30 @@
 import './App.css';
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import { useRef } from 'react';
 
 function App() {
+	const constraintsRef = useRef(null);
+
 	return (
-		<div className="App">
+		<div className="example-container">
+			<motion.div className="drag-area" ref={constraintsRef} />
 			<motion.div
-				className="motion-container"
+				drag
+				dragConstraints={constraintsRef}
 				animate={{
 					rotate: [0, 200, 200, 0],
-					x: [0, 200, 200, 0],
-					y: [0, 200, 200, 0],
 				}}
-				transition={{ type: 'tween', duration: 3, repeat: Infinity }}
-			></motion.div>
+				transition={{ repeat: Infinity, type: 'tween', duration: 5 }}
+			/>
 			<motion.div
-				className="motion-container"
+				drag
+				dragConstraints={constraintsRef}
 				animate={{
 					rotate: [0, 200, 200, 0],
-					x: [0, -200, 200, 0],
-					y: [0, 200, -200, 0],
 				}}
-				transition={{ type: 'tween', duration: 5, repeat: Infinity }}
-			></motion.div>
-			<motion.div
-				className="motion-container"
-				animate={{
-					rotate: [0, 200, 200, 0],
-					y: [0, 200, -200, 0],
-				}}
-				transition={{ type: 'tween', duration: 1, repeat: Infinity }}
-			></motion.div>
+				transition={{ repeat: Infinity, type: 'tween', duration: 5 }}
+			/>
 		</div>
 	);
 }

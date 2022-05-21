@@ -1,33 +1,24 @@
-* {
+body {
+	width: 100vw;
+	height: 100vh;
+	background: linear-gradient(180deg, #9c1aff 0%, rgb(119, 0, 255) 100%);
+	overflow: hidden;
 	padding: 0;
 	margin: 0;
-	box-sizing: border-box;
-	overflow-x: hidden;
 }
 
-.App {
-	background: #833ab4; /* fallback for old browsers */
-	background: -webkit-linear-gradient(
-		to right,
-		#fcb045,
-		#fd1d1d,
-		#833ab4
-	); /* Chrome 10-25, Safari 5.1-6 */
-	background: linear-gradient(
-		to right,
-		#fcb045,
-		#fd1d1d,
-		#833ab4
-	); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-	height: 100vh;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.motion-container {
-	background-color: white;
-	height: 150px;
-	width: 150px;
+.example-container div {
+	background: white;
 	border-radius: 30px;
+	width: 150px;
+	height: 150px;
+	position: absolute;
+}
+
+.example-container .drag-area {
+	opacity: 0.2;
+	background: white;
+	position: absolute;
+	width: 100%;
+	height: 100%;
 }
